@@ -1,2 +1,3 @@
-# sample-pypi-package
-Sample PyPI Package
+# Placeholder package
+
+This is a placeholder package

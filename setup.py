@@ -13,9 +13,9 @@ with open("README.md", "r") as fh:
 # Function that takes several arguments. It assigns these values to our package.
 setuptools.setup(
     # Distribution name the package. Name must be unique so adding your username at the end is common.
-    name="openhexa.cli",
+    name="PKG_NAME",
     # Version number of your package. Semantic versioning is commonly used.
-    version="0.1.1",
+    version="PKG_VERSION",
     # Author name.
     author="Ashish Bijlani",
     # Author's email address.

@@ -1,7 +1,7 @@
 # Import our newly installed setuptools package.
 import setuptools
 
-print("This is a placeholder package for megatron-lm. Please contact for removal.")
+print("This is a placeholder package. Please contact for removal.")
 
 # Opens our README.md and assigns it to long_description.
 with open("README.md", "r") as fh:

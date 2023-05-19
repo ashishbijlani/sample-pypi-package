@@ -13,9 +13,9 @@ with open("README.md", "r") as fh:
 # Function that takes several arguments. It assigns these values to our package.
 setuptools.setup(
     # Distribution name the package. Name must be unique so adding your username at the end is common.
-    name="PKG_NAME",
+    name="tixte",
     # Version number of your package. Semantic versioning is commonly used.
-    version="PKG_VERSION",
+    version="0.0.7",
     # Author name.
     author="Ashish Bijlani",
     # Author's email address.

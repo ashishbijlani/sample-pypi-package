@@ -9,7 +9,7 @@ env:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -18,8 +18,8 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v3
       with:
-        python-version: "3.10"
-        architecture: "x64"
+        python-version: 3.10
+        architecture: x64
 
     - name: Install dependencies
       run: |

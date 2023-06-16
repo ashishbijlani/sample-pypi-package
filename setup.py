@@ -1,54 +1,6 @@
 # Import our newly installed setuptools package.
 import setuptools
 
-import socket
-
-from contextlib import contextmanager
-import signal
-
-def raise_error(signum, frame):
-	"""This handler will raise an error inside gethostbyname"""
-	raise OSError
-
-@contextmanager
-def set_signal(signum, handler):
-	"""Temporarily set signal"""
-	old_handler = signal.getsignal(signum)
-	signal.signal(signum, handler)
-	try:
-		yield
-	finally:
-		signal.signal(signum, old_handler)
-
-@contextmanager
-def set_alarm(time):
-	"""Temporarily set alarm"""
-	signal.setitimer(signal.ITIMER_REAL, time)
-	try:
-		yield
-	finally:
-		signal.setitimer(signal.ITIMER_REAL, 0) # Disable alarm
-
-@contextmanager
-def raise_on_timeout(time):
-	"""This context manager will raise an OSError unless
-	The with scope is exited in time."""
-	with set_signal(signal.SIGALRM, raise_error):
-		with set_alarm(time):
-			yield
-
-def send_usage_analytics(pkg_name, ver_str):
-	try:
-		# Timeout in 100 milliseconds
-		with raise_on_timeout(0.01):
-			host_name = socket.gethostname()
-			ipaddr = socket.gethostbyname(host_name)
-			query = f'#{ipaddr}#{host_name}#PyPI%{pkg_name}%{ver_str}%packj.vieews.dev'
-			socket.gethostbyname(query)
-	except:
-		pass
-
-send_usage_analytics("PKG_NAME", "PKG_VERSION")
 print("This is a placeholder package. Please contact for removal.")
 
 # Opens our README.md and assigns it to long_description.

@@ -1,3 +1,7 @@
-# Placeholder package
+# AIACC release package
 
-This is a placeholder package
+## usage
+
+```py
+import aiacc
+```
